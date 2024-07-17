@@ -1,3 +1,11 @@
+#################################### docker ####################################
+
+Types: deb
+URIs: https://download.docker.com/linux/debian
+Suites: bookworm
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.gpg
+
 ##################################### helm #####################################
 
 Types: deb

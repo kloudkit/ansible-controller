@@ -1,4 +1,5 @@
 curl
+docker-ce-cli
 dnsutils
 git
 helm

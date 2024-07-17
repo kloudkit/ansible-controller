@@ -1,0 +1,27 @@
+{
+  "default": true,
+
+  "emphasis-style": {
+    "style": "asterisk"
+  },
+
+  "line-length": {
+    "line_length": 120,
+    "heading_line_length": 120,
+    "code_blocks": false
+  },
+
+  "no-bare-urls": false,
+
+  "no-duplicate-heading": {
+    "siblings_only": true
+  },
+
+  "no-inline-html": {
+    "allowed_elements": [ "br", "kdb", "pre", "script" ]
+  },
+
+  "ul-style": {
+    "style": "dash"
+  }
+}
