@@ -6,7 +6,31 @@
 
 ## Documentation
 
-TBD
+The image includes a default inventory *(`/etc/ansible/hosts`)* named `controller` that
+runs on `localhost` without root privileges.
+
+To use it, copy the following example playbook:
+
+```yaml
+- name: Run something
+  gather_facts: false
+  hosts: controller
+
+  tasks:
+    - name: Just saying hello
+      ansible.builtin.debug:
+        msg: Hello world! 👋
+```
+
+### Run
+
+```sh
+docker run --rm \
+  -v ./playbooks:/workspace \
+  ghcr.io/kloudkit/ansible-controller \
+  -e FOO=bar \
+  /workspace/play.yaml
+```
 
 ## License
 

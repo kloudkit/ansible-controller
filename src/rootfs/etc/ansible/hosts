@@ -1,7 +1,7 @@
 ---
-workspace:
+controller:
   hosts:
     localhost:
   vars:
     ansible_connection: local
-    ansible_become: true
+    ansible_become: false
