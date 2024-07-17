@@ -1,0 +1,26 @@
+---
+name: 📚 Documentation Change
+description: Improvements or additions to documentation.
+title: 📚 <title>
+labels:
+  - "type: documentation 📚"
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing request for this change?
+      description: |
+        Please make sure a request does not already exists for the
+        documentation changes you're looking to implement.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: textarea
+    attributes:
+      label: Context for documentation change
+      description: Explain what led you to draft this issue.
+      placeholder: |
+        I noticed unclear explanation of build and install and encountered
+        a few issues while attempting it myself.
+        This could confuse other contributors.
+    validations:
+      required: true

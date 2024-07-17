@@ -1,0 +1,14 @@
+##################################### helm #####################################
+
+Types: deb
+URIs: https://baltocdn.com/helm/stable/debian
+Suites: all
+Components: main
+Signed-By: /etc/apt/keyrings/helm.gpg
+
+##################################### k8s ######################################
+
+Types: deb
+URIs: https://pkgs.k8s.io/core:/stable:/v1.30/deb/
+Suites: /
+Signed-By: /etc/apt/keyrings/kubernetes.gpg

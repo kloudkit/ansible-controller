@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":disableRateLimiting"
+  ],
+  "assignees": [ "bdsoha" ],
+  "labels": [ "type: dependency 🔼" ],
+  "schedule": [ "every weekend" ],
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "🤖 Renovate Dashboard",
+  "commitMessageAction": "🔼 Bump",
+  "regexManagers": [
+    {
+      "fileMatch": [ "^Dockerfile$" ],
+      "matchStrings": [
+        "# renovate: source=(?<datasource>.*?) dep=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\nARG.*=(?<currentValue>.*)\\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
+}
