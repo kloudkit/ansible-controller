@@ -4,7 +4,7 @@ collections:
     version: 1.5.4
 
   - name: community.crypto
-    version: 2.21.0
+    version: 2.22.3
 
   - name: community.general
     version: 9.2.0
