@@ -7,7 +7,7 @@ collections:
     version: 2.21.0
 
   - name: community.general
-    version: 9.2.0
+    version: 9.5.1
 
   - name: kubernetes.core
     version: 5.0.0
