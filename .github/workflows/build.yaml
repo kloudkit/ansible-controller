@@ -62,7 +62,7 @@ jobs:
         uses: docker/build-push-action@v6
         id: docker_build
         env:
-          DOCKER_BUILD_NO_SUMMARY: true
+          DOCKER_BUILD_SUMMARY: false
         with:
           cache-from: type=gha
           cache-to: type=gha,mode=max
