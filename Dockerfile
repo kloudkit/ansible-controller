@@ -60,10 +60,10 @@ ARG TARGETARCH
 # renovate: source=github-releases dep=google/go-containerregistry
 ARG crane_version=0.20.2
 
-RUN case ${TARGETARCH} in "arm64") amr64 ;; "amd64") file=x86_64 ;; esac \
+RUN case ${TARGETARCH} in "arm64") file=amr64 ;; "amd64") file=x86_64 ;; esac \
   && curl -fsSL "https://github.com/google/go-containerregistry/releases/download/v${crane_version}/go-containerregistry_Linux_${file}.tar.gz" \
     | tar -xzf - \
-  && curl -fsSL https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.9.9/openshift-client-linux.tar.gz \
+  && curl -fsSL "https://mirror.openshift.com/pub/openshift-v4/${file}/clients/ocp/4.17.5/openshift-client-linux.tar.gz" \
     | tar -xzf - -C /tmp \
   && cp /tmp/oc .
 
