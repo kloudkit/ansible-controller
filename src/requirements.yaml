@@ -1,13 +1,22 @@
 ---
 collections:
   - name: ansible.posix
-    version: 1.6.2
+    version: 2.0.0
+
+  - name: ansible.windows
+    version: 2.6.0
 
   - name: community.crypto
     version: 2.22.3
 
+  - name: community.docker
+    version: 4.1.0
+
   - name: community.general
-    version: 10.0.1
+    version: 10.1.0
+
+  - name: community.windows
+    version: 2.3.0
 
   - name: kubernetes.core
     version: 5.0.0
