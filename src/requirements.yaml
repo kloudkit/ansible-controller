@@ -7,13 +7,13 @@ collections:
     version: 2.6.0
 
   - name: community.crypto
-    version: 2.22.3
+    version: 2.23.0
 
   - name: community.docker
-    version: 4.1.0
+    version: 4.3.0
 
   - name: community.general
-    version: 10.1.0
+    version: 10.2.0
 
   - name: community.windows
     version: 2.3.0
