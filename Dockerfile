@@ -58,7 +58,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG TARGETARCH
 
 # renovate: source=github-releases dep=google/go-containerregistry
-ARG crane_version=0.20.2
+ARG crane_version=0.20.3
 
 RUN case ${TARGETARCH} in "arm64") file=arm64 ;; "amd64") file=x86_64 ;; esac \
   && curl -fsSL "https://github.com/google/go-containerregistry/releases/download/v${crane_version}/go-containerregistry_Linux_${file}.tar.gz" \
