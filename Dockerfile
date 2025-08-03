@@ -1,53 +1,24 @@
-ARG tag=12-slim
+ARG tag=v0.0.1
 
 ################################## Temp Layer ##################################
 
-FROM debian:${tag} AS temp
-
-RUN mkdir -p /etc/apt/keyrings
-
-### Install helper requirements
-RUN apt-get update \
-  && apt-get satisfy -y --no-install-recommends \
-    "ca-certificates (>=20230311)" \
-    "curl (>=7.88)" \
-    "gnupg (>=2.2)" \
-    "unzip (>=6.0)" \
-  && rm -rf /var/lib/apt/lists/*
-
-### Add non-standard repository keys
-RUN --mount=src=src,dst=/build \
-  /build/add-gpg-keyrings.sh /build/extra.gpg.txt \
-  && chmod a+r /etc/apt/keyrings/*.gpg
+FROM ghcr.io/kloudkit/base-image:${tag} AS temp
 
 ################################## Base Layer ##################################
 
-FROM debian:${tag} AS base
+FROM ghcr.io/kloudkit/base-image:${tag} AS base
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ENV LANG=en_US.UTF-8
-
 COPY src/rootfs /
-COPY --from=temp /etc/apt/keyrings /etc/apt/keyrings
-
-### Add application user
-RUN adduser \
-    --disabled-password \
-    --gecos '' \
-    --uid 1000 \
-    kloud
 
 ### Install packages
 RUN --mount=src=src,dst=/build \
-  apt-get update \
-  && apt-get satisfy -y --no-install-recommends \
-    "ca-certificates (>=20230311)" \
+  /usr/libexec/kloudkit/install-apt-keyring -f /build/additional.gpg.txt \
   && apt-get update \
   && apt-get satisfy -y --no-install-recommends $(cat /build/packages.apt) \
   && rm -rf \
     /var/lib/apt/lists/* \
     /usr/lib/python3.11/EXTERNALLY-MANAGED \
-  && locale-gen \
   && ln -fs "$(which python3)" /usr/bin/python
 
 ############################### Dependency Layer ###############################
