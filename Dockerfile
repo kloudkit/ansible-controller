@@ -21,6 +21,9 @@ RUN --mount=src=src,dst=/build \
     /usr/lib/python3.11/EXTERNALLY-MANAGED \
   && ln -fs "$(which python3)" /usr/bin/python
 
+RUN mkdir -p /home/kloud \
+  && chown -R kloud:kloud /home/kloud
+
 ############################### Dependency Layer ###############################
 
 FROM temp AS deps
@@ -29,7 +32,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG TARGETARCH
 
 # renovate: source=github-releases dep=google/go-containerregistry
-ARG crane_version=0.20.3
+ARG crane_version=0.20.6
 
 RUN case ${TARGETARCH} in "arm64") file=arm64 ;; "amd64") file=x86_64 ;; esac \
   && curl -fsSL "https://github.com/google/go-containerregistry/releases/download/v${crane_version}/go-containerregistry_Linux_${file}.tar.gz" \
