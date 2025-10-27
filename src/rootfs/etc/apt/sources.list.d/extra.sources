@@ -9,14 +9,14 @@ Signed-By: /etc/apt/keyrings/docker.gpg
 ##################################### helm #####################################
 
 Types: deb
-URIs: https://baltocdn.com/helm/stable/debian
-Suites: all
+URIs: https://packages.buildkite.com/helm-linux/helm-debian/any
+Suites: any
 Components: main
 Signed-By: /etc/apt/keyrings/helm.gpg
 
 ##################################### k8s ######################################
 
 Types: deb
-URIs: https://pkgs.k8s.io/core:/stable:/v1.30/deb/
+URIs: https://pkgs.k8s.io/core:/stable:/v1.33/deb/
 Suites: /
 Signed-By: /etc/apt/keyrings/kubernetes.gpg
