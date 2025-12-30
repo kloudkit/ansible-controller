@@ -13,7 +13,7 @@ collections:
     version: 4.8.2
 
   - name: community.general
-    version: 11.4.0
+    version: 11.4.3
 
   - name: community.windows
     version: 3.0.1
