@@ -10,7 +10,7 @@ collections:
     version: 3.0.4
 
   - name: community.docker
-    version: 4.8.2
+    version: 4.8.6
 
   - name: community.general
     version: 11.4.0
