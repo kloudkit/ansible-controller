@@ -4,19 +4,19 @@ collections:
     version: 2.1.0
 
   - name: ansible.windows
-    version: 3.2.0
+    version: 3.3.0
 
   - name: community.crypto
-    version: 3.0.4
+    version: 3.1.0
 
   - name: community.docker
-    version: 4.8.2
+    version: 5.0.5
 
   - name: community.general
-    version: 11.4.0
+    version: 12.2.0
 
   - name: community.windows
-    version: 3.0.1
+    version: 3.1.0
 
   - name: kubernetes.core
     version: 6.2.0

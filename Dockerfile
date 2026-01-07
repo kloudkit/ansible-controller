@@ -1,4 +1,4 @@
-ARG tag=v0.0.3
+ARG tag=v0.0.4-trixie
 
 ################################## Temp Layer ##################################
 
@@ -18,7 +18,7 @@ RUN --mount=src=src,dst=/build \
   && apt-get satisfy -y --no-install-recommends $(cat /build/packages.apt) \
   && rm -rf \
     /var/lib/apt/lists/* \
-    /usr/lib/python3.11/EXTERNALLY-MANAGED \
+    /usr/lib/python3.*/EXTERNALLY-MANAGED \
   && ln -fs "$(which python3)" /usr/bin/python
 
 RUN mkdir -p /home/kloud \
@@ -32,7 +32,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG TARGETARCH
 
 # renovate: source=github-releases dep=google/go-containerregistry
-ARG crane_version=0.20.6
+ARG crane_version=0.20.7
 
 RUN case ${TARGETARCH} in "arm64") file=arm64 ;; "amd64") file=x86_64 ;; esac \
   && curl -fsSL "https://github.com/google/go-containerregistry/releases/download/v${crane_version}/go-containerregistry_Linux_${file}.tar.gz" \

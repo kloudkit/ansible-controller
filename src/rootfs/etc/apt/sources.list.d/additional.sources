@@ -2,7 +2,7 @@
 
 Types: deb
 URIs: https://download.docker.com/linux/debian
-Suites: bookworm
+Suites: trixie
 Components: stable
 Signed-By: /etc/apt/keyrings/docker.gpg
 
@@ -17,6 +17,6 @@ Signed-By: /etc/apt/keyrings/helm.gpg
 ##################################### k8s ######################################
 
 Types: deb
-URIs: https://pkgs.k8s.io/core:/stable:/v1.33/deb/
+URIs: https://pkgs.k8s.io/core:/stable:/v1.34/deb
 Suites: /
 Signed-By: /etc/apt/keyrings/kubernetes.gpg
